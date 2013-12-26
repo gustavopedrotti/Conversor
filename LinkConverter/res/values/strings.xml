@@ -10,6 +10,13 @@
     <string name="quantidade">Quantidade</string>
     <string name="resultado_lbl">Resultado:</string>
     <string name="resultado_edit">Resultado</string>
+    <string name="opcoes_conversores">Conversores</string>
+    
+    <string-array name="valores_area">
+        <item>Metro quadrado</item>
+        <item>Acre</item>
+        <item>Hectare</item>
+    </string-array>
     
     
 

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.app.Notification;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,8 +16,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.linkidiomas.ar.linkconverter.PrincipalActivity;
+
+import com.linkidiomas.ar.link.converter.fragments.conversores.ConversorAreaFragment;
 import com.linkidiomas.ar.linkconverter.R;
+import com.linkidiomas.ar.linkconverter.infra.PrincipalActivity;
 import com.linkidiomas.ar.linkconverter.vo.Conversor;
 import com.linkidiomas.ar.linkconverter.vo.tipo.ConversorArea;
 import com.linkidiomas.ar.linkconverter.vo.tipo.ConversorComprimento;
@@ -32,8 +36,19 @@ public class ListaConversoresFragment extends ListFragment {
 	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		Toast.makeText(activity, "Deu certo!", Toast.LENGTH_LONG).show();
-		activity.closeDrawers();
+		switch (position) {
+		case 0:
+			activity.replace(new ConversorAreaFragment());
+			activity.closeDrawers();
+						
+			break;
+
+		default:
+			Toast.makeText(activity, "Deu certo!", Toast.LENGTH_LONG).show();
+			activity.closeDrawers();
+			
+			break;
+		}
 		super.onListItemClick(l, v, position, id);
 	}
 
